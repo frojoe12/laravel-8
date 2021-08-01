@@ -25,7 +25,9 @@ Route::get('/contact',function(){
 
 Route::get('/posts/{id}', function($id) {
     return $id;
-})->name('posts.show');
+})->where([
+    'id' => '[0-9]+' // regex 0 to 9 and have a length of at least 1
+])->name('posts.show');
 
 
 Route::get('/recent-posts/{days_ago?}',function($id=20) { // add ? for optional param + default value = 20
