@@ -25,7 +25,12 @@ Route::get('/contact',function(){
 
 Route::get('/posts/{id}', function($id) {
     return $id;
-});
+})->name('posts.show');
+
+
+Route::get('/recent-posts/{days_ago?}',function($id=20) { // add ? for optional param + default value = 20
+    return 'Recent posts: ' . $id . ' days ago';
+})->name('posts.recent.index');
 
 /*
 Route::post('/', function () {
