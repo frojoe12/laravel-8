@@ -13,6 +13,19 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/', function () { // 'uri','controller' // eg anonymous function
+    // return '<h1>Hello</h1>';
+    return '{object: "none"}';
+    // return view('welcome');
+})->name('home.index');
+
+Route::get('/contact',function(){
+    return 'Contact';
+})->name('home.contact');
+
+/*
+Route::post('/', function () {
+    return "";
 });
+*/
+// get post put/path delete
